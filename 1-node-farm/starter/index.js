@@ -18,6 +18,10 @@ const {url} = require('url');
 //SERVER
 /// / / / / /
 
+
+const data = fs.readFileSync('${__dirname}/devdata/data.json', 'UTF-8');
+    const dataObj =JSON.parse(data);
+
 const server = http.createServer((req, res) =>{
         
         const pathName = req.url;
@@ -28,6 +32,11 @@ const server = http.createServer((req, res) =>{
         else if(pathName === '/product')
         {
             res.end('ye to product page hai');
+        }
+        else if(pathName === '/api')
+        {
+            res.writeHead(200, {'content-type': 'application/jason'});
+            res.end(data);
         }
         else 
         {
