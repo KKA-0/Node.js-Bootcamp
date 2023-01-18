@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
-const { Http2ServerResponse } = require('http2');
+const { type } = require('os');
+const {url} = require('url');
 
 /// / / / / /
 //Files
@@ -18,10 +19,29 @@ const { Http2ServerResponse } = require('http2');
 /// / / / / /
 
 const server = http.createServer((req, res) =>{
-        res.end('Hello World');
-    }
-        );
+        
+        const pathName = req.url;
+        if (pathName === '/' || pathName ===   '/overview')
+        {
+            res.end('ye to overview hai bro');
+        }
+        else if(pathName === '/product')
+        {
+            res.end('ye to product page hai');
+        }
+        else 
+        {
+            res.writeHead(404,{
+                'content-type': 'text/html'    
+            });
+            res.end('<h1> Cheating karta hai to Cheating...');
+        }
+    
+    
+    
+    }    );
 
 server.listen(8000, '127.0.0.1', () => {
     console.log('Running');
 })
+
