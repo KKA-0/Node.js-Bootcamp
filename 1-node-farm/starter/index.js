@@ -19,7 +19,7 @@ const {url} = require('url');
 /// / / / / /
 
 
-const data = fs.readFileSync('${__dirname}/devdata/data.json', 'UTF-8');
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'UTF-8');
     const dataObj =JSON.parse(data);
 
 const server = http.createServer((req, res) =>{
@@ -35,7 +35,7 @@ const server = http.createServer((req, res) =>{
         }
         else if(pathName === '/api')
         {
-            res.writeHead(200, {'content-type': 'application/jason'});
+            res.writeHead(200, {'content-type': 'application/json'});
             res.end(data);
         }
         else 
