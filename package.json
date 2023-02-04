@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-bootcamp",
+  "version": "1.0.0",
+  "description": "learning node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKA-0/Node.js-Bootcamp.git"
+  },
+  "author": "KKA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KKA-0/Node.js-Bootcamp/issues"
+  },
+  "homepage": "https://github.com/KKA-0/Node.js-Bootcamp#readme",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
