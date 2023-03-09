@@ -6,6 +6,7 @@ const { type } = require('os');
 
 const home = fs.readFileSync(`${__dirname}/templates/index.html`, 'UTF-8');
 const product = fs.readFileSync(`${__dirname}/templates/product.html`, 'UTF-8');
+const error = fs.readFileSync(`${__dirname}/templates/error.html`, 'UTF-8');
 ///             server created below               ///
 const server = http.createServer((req, res) => {
 
@@ -19,6 +20,10 @@ const server = http.createServer((req, res) => {
     {
         res.writeHead(200, { 'Content-type': 'text/html' });
         res.end(product);
+    }
+    else {
+        res.writeHead(200, { 'Content-type': 'text/html' });
+        res.end(error);
     }
 });
 
